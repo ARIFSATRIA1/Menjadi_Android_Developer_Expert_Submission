@@ -82,3 +82,6 @@ public *;
 
 -keep class com.example.expertsubs.core.data.source.local.entity.UserEntity
 
+-keep class java.lang.invoke.StringConcatFactory {
+    *;
+}
