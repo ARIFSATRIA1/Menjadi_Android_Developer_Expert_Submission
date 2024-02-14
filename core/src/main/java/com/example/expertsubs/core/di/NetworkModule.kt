@@ -22,6 +22,7 @@ class NetworkModule {
     private val certificatePinner = CertificatePinner.Builder()
         .add("api.github.com","sha256/Wec45nQiFwKvHtuHxSAMGkt19k+uPSw9JlEkxhvYPHk=")
         .add("api.github.com","sha256/Jg78dOE+fydIGk19swWwiypUSR6HWZybfnJG/8G7pyM=")
+        .add("api.github.com","sha256/e0IRz5Tio3GA1Xs4fUVWmH1xHDiH2dMbVtCBSkOIdqM=")
         .build()
 
     @Provides
