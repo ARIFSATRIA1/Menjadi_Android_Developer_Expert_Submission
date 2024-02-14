@@ -5,6 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.CertificatePinner
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -16,6 +17,12 @@ import retrofit2.create
 @Module
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
+
+
+    private val certificatePinner = CertificatePinner.Builder()
+        .add("api.github.com","sha256/Wec45nQiFwKvHtuHxSAMGkt19k+uPSw9JlEkxhvYPHk=")
+        .add("api.github.com","sha256/Jg78dOE+fydIGk19swWwiypUSR6HWZybfnJG/8G7pyM=")
+        .build()
 
     @Provides
     fun providesOkHttpClient(): OkHttpClient {
@@ -30,6 +37,7 @@ class NetworkModule {
         return OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .addInterceptor(authInterceptor)
+            .certificatePinner(certificatePinner)
             .build()
     }
 
