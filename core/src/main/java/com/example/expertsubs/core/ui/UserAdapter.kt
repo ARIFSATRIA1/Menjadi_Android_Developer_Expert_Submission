@@ -1,5 +1,6 @@
 package com.example.expertsubs.core.ui
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.ListViewHolder>() {
     private var listData = ArrayList<Users>()
     var onItemCLick:((Users) -> Unit)? = null
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(newListData: List<Users>?) {
         if (newListData == null) return
         listData.clear()

@@ -5,7 +5,6 @@
     <string name="title_home">Home\n</string>
     <string name="favorite">Favorite\n</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="repos">repos</string>
     <string name="title_favorite">favorite</string>
 </resources>
